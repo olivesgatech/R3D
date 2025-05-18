@@ -249,7 +249,7 @@ def predict(model, vid_list, args, obs_p, n_class, actions_dict, device):
             base_name = vid.split('/')[-1].split('.')[0]
             feature_depth_file = os.path.join(depth_features_path, f"{base_name}.npy")
             
-            with open("/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/save_dir/utkinects/visualization/file_depth203050/gt_pred_log_{}.txt".format(obs_p), "w") as log:
+            with open("/home/seulgi/work/T3D/save_dir/utkinects/visualization/file_depth203050/gt_pred_log_{}.txt".format(obs_p), "w") as log:
                 log.write("--------------------------------------\n")
                 log.write("gt file\tGround Truth (GT)\tPrediction (Pred)\n")
                 # Check if gt and feature files with the sequence index exist
@@ -299,8 +299,8 @@ def predict(model, vid_list, args, obs_p, n_class, actions_dict, device):
                 image_target = image_target[::sample_rate]
 
                 # Model inference
-                #outputs = model(inputs=inputs.unsqueeze(0), depth_features=depth_features.unsqueeze(0), mode='test', epoch=log_idx, idx=obs_p)
-                outputs = model(inputs=inputs.unsqueeze(0), mode='test', epoch=log_idx, idx=obs_p)
+                outputs = model(inputs=inputs.unsqueeze(0), depth_features=depth_features.unsqueeze(0), mode='test', epoch=log_idx, idx=obs_p)
+                #outputs = model(inputs=inputs.unsqueeze(0), mode='test', epoch=log_idx, idx=obs_p)
 
                 ## Action Segmentation
                 

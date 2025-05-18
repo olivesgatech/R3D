@@ -176,7 +176,7 @@ def generate_tsne_matplotlib(embeddings, log_idx, obs_p, batch, labels=None):
     if len(embeddings) < 2:
         return
     # Perform t-SNE dimensionality reduction
-    save_path = f"/home/seulgi/work/darai-anticipation/FUTR_proposed/save_dir/darai/visualization/tsne_max_query_actualquery/{log_idx}_{obs_p}_b{batch}_tsne.png"
+    save_path = f"/home/seulgi/work/T3D/save_dir/darai/visualization/tsne_max_query_actualquery/{log_idx}_{obs_p}_b{batch}_tsne.png"
     embeddings = embeddings.cpu()
     if labels is None:
         labels = np.arange(1, len(embeddings) + 1)
@@ -258,7 +258,7 @@ def predict(model, vid_list, args, obs_p, n_class, actions_dict, device, query_d
                 feature_depth_file = feature_depth_file.replace('camera_2_fps_15', 'depth_2')
 
             seq_idx = 1
-            with open("/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/save_dir/darai/visualization/file_baseline_iccv/gt_pred_log_{}_{}.txt".format(obs_p, log_idx), "w") as log:
+            with open("/home/seulgi/work/T3D/save_dir/darai/visualization/file_baseline_iccv/gt_pred_log_{}_{}.txt".format(obs_p, log_idx), "w") as log:
 
                 while True:
                     log.write("--------------------------------------\n")

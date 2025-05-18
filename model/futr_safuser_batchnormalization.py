@@ -55,7 +55,7 @@ class CMFuser(nn.Module):
 
 
 
-        k = max(0, int(C * 0.2))
+        k = max(0, int(C * 0.1))
         _, topk_rgb = torch.topk(gamma_rgb, k, dim=-1, largest=False)
         _, topk_depth = torch.topk(gamma_depth, k, dim=-1, largest=False)
 
@@ -150,8 +150,8 @@ class FUTR(nn.Module):
         self.positional_embedding_l3 = self.sinusoidal_positional_encoding(max_seq_len, hidden_dim)
         self.positional_embedding_l3 = self.positional_embedding_l3.to(self.device)
 
-        self.depth_projection = nn.Linear(224 * 224, hidden_dim)  # (1, 224, 224) → (hidden_dim)
-        #self.depth_projection = nn.Linear(160 * 120, hidden_dim)  # (1, 224, 224) → (hidden_dim)
+        #self.depth_projection = nn.Linear(224 * 224, hidden_dim)  # (1, 224, 224) → (hidden_dim)
+        self.depth_projection = nn.Linear(160 * 120, hidden_dim)  # (1, 224, 224) → (hidden_dim)
         
         nn.init.xavier_uniform_(self.depth_projection.weight)
         self.depth_layernorm = nn.LayerNorm(hidden_dim)  # 추가된 LayerNorm

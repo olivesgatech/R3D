@@ -117,11 +117,11 @@ class BaseDataset(Dataset):
 
 def main():
     # 경로 설정
-    train_split_path = '/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/datasets/utkinect/splits/train_split.txt'
-    #train_split_path = '/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/datasets/utkinect/splits/val_split.txt'
-    l2_mapping_file = '/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/datasets/utkinect/mapping_l2_changed.txt'
+    #train_split_path = '/home/seulgi/work/T3D/datasets/utkinect/splits/train_split.txt'
+    train_split_path = '/home/seulgi/work/T3D/datasets/utkinect/splits/val_split.txt'
+    l2_mapping_file = '/home/seulgi/work/T3D/datasets/utkinect/mapping_l2_changed.txt'
     
-    save_dir = '/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/datasets/utkinect/features_img'  # 시퀀스를 저장할 디렉터리 경로
+    save_dir = '/home/seulgi/work/T3D/datasets/utkinect/features_img'  # 시퀀스를 저장할 디렉터리 경로
 
     # actions_dict와 query_dict 로드
     actions_dict = load_mapping(l2_mapping_file)
@@ -130,7 +130,7 @@ def main():
     n_class = len(actions_dict)
     
     class Args:
-        groundtruth_dir = '/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/datasets/utkinect/groundTruth'
+        groundtruth_dir = '/home/seulgi/work/T3D/datasets/utkinect/groundTruth'
 
     args = Args()
 

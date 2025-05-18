@@ -1,9 +1,9 @@
 import os
 import re
 
-dataset_path = "/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/datasets/utkinect/RGB"
-action_labels_path = "/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/datasets/utkinect/actionLabel.txt"
-groundTruth_path = "/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/datasets/utkinect/groundTruth"
+dataset_path = "/home/seulgi/work/T3D/datasets/utkinect/RGB"
+action_labels_path = "/home/seulgi/work/T3D/datasets/utkinect/actionLabel.txt"
+groundTruth_path = "/home/seulgi/work/T3D/datasets/utkinect/groundTruth"
 
 # 정규 표현식 패턴 (숫자 추출)
 num_pattern = re.compile(r'(\d+)')
@@ -24,6 +24,7 @@ with open(action_labels_path, "r") as file:
             session_labels[current_session] = {}
         else:
             # 동작 레이블 및 범위 파싱 (예: walk: 252 390)
+            print(line)
             parts = line.split(":")
             action = parts[0].strip()
             start, end = map(int, parts[1].strip().split())

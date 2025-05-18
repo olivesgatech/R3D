@@ -14,8 +14,8 @@ from pl_bolts.optimizers.lr_scheduler import LinearWarmupCosineAnnealingLR
 
 #from loss.spc import SupConLoss#SupervisedContrastiveLoss
 from utils import read_mapping_dict
-from data.basedataset_darai import BaseDataset
-#from data.basedataset_darai_depth import BaseDataset
+#from data.basedataset_darai import BaseDataset
+from data.basedataset_darai_depth import BaseDataset
 #from data.basedataset_darai_gaze import BaseDataset
 #from data.basedataset_darai_llm import BaseDataset
 #from data.basedataset_darai_llm_train import BaseDataset
@@ -26,14 +26,14 @@ from data.basedataset_darai import BaseDataset
 #from model.rnn import FUTR
 #from model.cnn import FUTR
 #from model.afft import FUTR
-#from model.futr_safuser_batchnormalization import FUTR
+from model.futr_safuser_batchnormalization import FUTR
 #from model.futr_safuser_depth import FUTR
 #from model.futr_unsupervised_depth import FUTR
 #from model.futr_unsupervised import FUTR
 #from model.futr_unsupervised_llm import FUTR
 #from model.futr_unsupervised_multimodal import FUTR
 #from model.futr_unsupervised_temp2 import FUTR
-from model.futr_unsupervised_temp3 import FUTR
+#from model.futr_unsupervised_temp3 import FUTR
 #from model.futr_unsupervised_temp4 import FUTR
 #from train_proposed import train
 #from train_proposed_depth import train
@@ -83,7 +83,7 @@ def main(seed, dataset_ops):
     elif dataset == '50salads' :
         data_path = './datasets/50salads'
     elif dataset == 'darai':
-        data_path = './datasets/darai'
+        data_path = '/home/seulgi/work/darai-anticipation/FUTR_proposed/datasets/darai'
 
     query_mapping_file = os.path.join(data_path, 'mapping_l3_changed.txt')
     query_dict = read_mapping_dict(query_mapping_file)
@@ -148,7 +148,7 @@ def main(seed, dataset_ops):
         elif args.dataset == '50salads':
             model_path = './ckpt/50s_split'+args.split+'.ckpt'
         elif args.dataset == 'darai':
-            model_path = f'/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/save_dir/darai/long/model/transformer/1/i3d_transcript/runs0/_{dataset_ops}/seed_{seed}_best.ckpt'
+            model_path = f'/home/seulgi/work/T3D/save_dir/darai/long/model/transformer/1/i3d_transcript/runs0/_{dataset_ops}/seed_{seed}_best.ckpt'
             
         print("Predict with ", model_path)
         seed_list =  [1]#, 10, 13452]
@@ -157,7 +157,7 @@ def main(seed, dataset_ops):
             ant_whole = 0
             seg_whole = 0
             for seed in seed_list:
-                model_path = f'/home/hice1/skim3513/scratch/darai-anticipation/FUTR_proposed/save_dir/darai/long/model/transformer/1/i3d_transcript/runs0/_{dataset_ops}/seed_{seed}_best.ckpt'
+                model_path = f'/home/seulgi/work/T3D/save_dir/darai/long/model/transformer/1/i3d_transcript/runs0/_{dataset_ops}/seed_{seed}_best.ckpt'
                 model.load_state_dict(torch.load(model_path))
                 model.to(device)
                 ant, seg = 0, 0
@@ -187,7 +187,7 @@ def main(seed, dataset_ops):
 if __name__ == '__main__':
     # Seed fix
     seed = [1, 10, 13452]
-    dataset_ops = '_20_30_50'
+    dataset_ops = '20_30_50_safuser_tokenfusion_BN'
     main(seed[0], dataset_ops)
     main(seed[1], dataset_ops)
     main(seed[2], dataset_ops)

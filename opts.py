@@ -5,9 +5,9 @@ parser.add_argument("--model", default="futr", help='model type')
 parser.add_argument("--mode", default="train_eval", help="select action: [\"train\", \
                     \"predict\", \"train_eval\"]")
 #parser.add_argument("--dataset", type=str, default='breakfast')
-parser.add_argument("--dataset", type=str, default='darai')
+#parser.add_argument("--dataset", type=str, default='darai')
 #parser.add_argument("--dataset", type=str, default='50salads')
-#parser.add_argument("--dataset", type=str, default='utkinects')
+parser.add_argument("--dataset", type=str, default='utkinects')
 #parser.add_argument("--dataset", type=str, default='nturgbd')
 #parser.add_argument('--predict', "-p", action='store_true', help="predict for whole videos mode")
 parser.add_argument('--predict', "-p", action='store_true', help="predict for whole videos mode", default='predict')
@@ -28,25 +28,25 @@ parser.add_argument('--predict', "-p", action='store_true', help="predict for wh
 
 
 #utkinects
-# parser.add_argument("--mapping_file", default="./datasets/utkinect/mapping_l2_changed.txt")
-# parser.add_argument("--features_path", default="./datasets/utkinect/features_img/")
-# parser.add_argument("--gt_path", default="./datasets/utkinect/groundTruth/")
-# parser.add_argument("--split", default="1", help='split number')
-# parser.add_argument("--file_path", default="./datasets/utkinect/splits")
-# parser.add_argument("--model_save_path", default="./save_dir/models/transformer")
-# parser.add_argument("--results_save_path", default="./save_dir/results/transformer")
-# parser.add_argument("--task", type=str, help="Next Action Anticipation/long-term anticipation", default='long')
-
-
-#darai
-parser.add_argument("--mapping_file", default="./datasets/darai/mapping_l2_changed.txt")
-parser.add_argument("--features_path", default="./datasets/darai/features_img/")
-parser.add_argument("--gt_path", default="./datasets/darai/groundTruth_img/")
+parser.add_argument("--mapping_file", default="./datasets/utkinect/mapping_l2_changed.txt")
+parser.add_argument("--features_path", default="./datasets/utkinect/features_img/")
+parser.add_argument("--gt_path", default="./datasets/utkinect/groundTruth/")
 parser.add_argument("--split", default="1", help='split number')
-parser.add_argument("--file_path", default="./datasets/darai/splits")
+parser.add_argument("--file_path", default="./datasets/utkinect/splits")
 parser.add_argument("--model_save_path", default="./save_dir/models/transformer")
 parser.add_argument("--results_save_path", default="./save_dir/results/transformer")
 parser.add_argument("--task", type=str, help="Next Action Anticipation/long-term anticipation", default='long')
+
+
+#darai
+# parser.add_argument("--mapping_file", default="/home/seulgi/work/darai-anticipation/FUTR_proposed/datasets/darai/mapping_l2_changed.txt")
+# parser.add_argument("--features_path", default="/home/seulgi/work/darai-anticipation/FUTR_proposed/datasets/darai/features_img/")
+# parser.add_argument("--gt_path", default="/home/seulgi/work/darai-anticipation/FUTR_proposed/datasets/darai/groundTruth_img/")
+# parser.add_argument("--split", default="1", help='split number')
+# parser.add_argument("--file_path", default="/home/seulgi/work/darai-anticipation/FUTR_proposed/datasets/darai/splits")
+# parser.add_argument("--model_save_path", default="./save_dir/models/transformer")
+# parser.add_argument("--results_save_path", default="./save_dir/results/transformer")
+# parser.add_argument("--task", type=str, help="Next Action Anticipation/long-term anticipation", default='long')
 
 #breakfast
 # parser.add_argument("--mapping_file", default="./datasets/breakfast/mapping.txt")
@@ -81,8 +81,8 @@ parser.add_argument("-warmup", '--n_warmup_steps', type=int, default=500)
 parser.add_argument("--cpu", action='store_true', help='run in cpu')
 #parser.add_argument("--sample_rate", type=int, default=3) # breakfast
 #parser.add_argument("--sample_rate", type=int, default=6) # 50salads
-parser.add_argument("--sample_rate", type=int, default=15) # darai
-#parser.add_argument("--sample_rate", type=int, default=1) # utkinects, nturgbd
+#parser.add_argument("--sample_rate", type=int, default=15) # darai
+parser.add_argument("--sample_rate", type=int, default=1) # utkinects, nturgbd
 parser.add_argument("--obs_perc", default=30)
 parser.add_argument("--n_query", type=int, default=8) # 1
 

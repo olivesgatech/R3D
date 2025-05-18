@@ -74,8 +74,8 @@ class Transformer(nn.Module):
 
     def forward(self, src, tgt, mask, tgt_mask, tgt_key_padding_mask, query_embed=None, pos_embed=None, tgt_pos_embed=None, epoch=0, idx=0, memory_mask=None, image_path=None, human_prompt=None):
 
-        memory = self.encoder(src, src_key_padding_mask=mask, pos=pos_embed)
-        #memory = src
+        #memory = self.encoder(src, src_key_padding_mask=mask, pos=pos_embed)
+        memory = src
         ############### L3 query with LLM ##########################
 
         # with torch.no_grad():
