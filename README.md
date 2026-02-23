@@ -1,2 +1,2 @@
-# T3D
-Thinking in 3D: Depth-aware Spatial Reasoning for Multi-modal 3D Action Anticipation (ICCV 2025)
+# R3D
+Countering Multi-modal Representation Collapse through Rank-targeted Fusion (WACV 2026)
