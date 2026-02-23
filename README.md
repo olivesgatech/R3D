@@ -1,7 +1,6 @@
 ## Countering Multi-modal Representation Collapse through Rank-targeted Fusion (WACV 2026)
 
 ### Links
-- Project page/Demo: https://skvictoria.github.io/papers/wacv2025
 - Paper (arXiv): https://arxiv.org/abs/2511.06450
 
 This repository provides the official code and experiments for **“Countering Multi-modal Representation Collapse through Rank-targeted Fusion.”**
