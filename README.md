@@ -10,10 +10,10 @@ Multi-modal fusion often suffers from two coupled failure modes:
 - **Feature collapse**: representation diversity shrinks as variation concentrates in only a few directions.
 - **Modality collapse**: one dominant modality overwhelms the other, reducing balanced multi-modal reasoning.
 
-We propose **effective rank** as a unified measure to quantify and counter both collapses, and introduce **Rank-enhancing Token Fuser**, a theoretically grounded fusion method that selectively blends less-informative features from one modality with complementary features from another to increase the effective rank of the fused representation.
-To further address modality collapse, we analyze modality pairings and show that **depth** helps preserve representational balance when fused with RGB.
-
-We validate the approach on **human action anticipation** and present **R3D**, a depth-informed fusion framework, demonstrating improvements across **NTU RGB+D, UTKinect, and DARai** (up to **+3.74%** over prior SOTA).
+### TL;DR
+We propose effective rank as a unified measure to quantify and counter both collapses, and introduce Rank-enhancing Token Fuser, a theoretically grounded fusion method that selectively blends less-informative features from one modality with complementary features from another to increase the effective rank of the fused representation.
+To further address modality collapse, we analyze modality pairings and show that depth helps preserve representational balance when fused with RGB.
+We validate the approach on human action anticipation / action segmentation, demonstrating improvements across diverse datasets.
 
 
 ### Citation
