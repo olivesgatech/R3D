@@ -14,6 +14,23 @@ We propose effective rank as a unified measure to quantify and counter both coll
 To further address modality collapse, we analyze modality pairings and show that depth helps preserve representational balance when fused with RGB.
 We validate the approach on human action anticipation / action segmentation, demonstrating improvements across diverse datasets.
 
+### Training R3D
+
+To run experiments for each dataset, execute the corresponding main script below:
+
+- **DARai**
+  ```bash
+  python3 main_darai.py
+  ```
+
+- **UTKinects**
+  ```bash
+  python3 main_utkinects.py
+  ```
+- **NTURGBD**
+  ```bash
+  python3 main_nturgbd.py
+  ```
 
 ### Citation
 ```bibtex
